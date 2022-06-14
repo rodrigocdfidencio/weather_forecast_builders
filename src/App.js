@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 
 function App() {
+  const [location, setLocation] = useState(false);
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      console.log(position.coords.latitude, position.coords.longitude);
+      setLocation(true)
+    }, (err) => { console.log(err) });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h3>Previsão do tempo na sua localidade</h3>
+      <hr />
+      <ul>
+        <li>Temperatura atual: x°</li>
+        <li>Temperatura máxima: x°</li>
+        <li>Temperatura minima: x°</li>
+        <li>Pressão: x hpa</li>
+        <li>Umidade: x%</li>
+      </ul>
     </div>
   );
 }

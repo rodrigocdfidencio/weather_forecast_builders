@@ -1,54 +1,55 @@
 import React, {useEffect, useState} from 'react';
-import axios from 'axios';
+import Main from './pages/Main/Main';
+import Warning from './pages/Warning/Warning';
+import Loading from './pages/Loading/Loading';
+import openWeatherAPI from './services/api';
 
 function App() {
   const [location, setLocation] = useState(false);
   const [weather, setWeather] = useState(false);
 
-  let getWeather = async (lat, long) => {
-    let res = await axios.get("http://api.openweathermap.org/data/2.5/weather", {
-      params: {
-        lat: lat,
-        lon: long,
-        appid: process.env.REACT_APP_OPEN_WHEATHER_KEY,
-        lang: 'pt',
-        units: 'metric'
-      }
-    });
-    setWeather(res.data);
+  useEffect(() => {
+    getLocation();
+  }, []);
+
+  useEffect(() => {
+    if (location) {
+      asyncGetWeather();
+    }
+  }, [location]);
+
+  const getLocation = () => {
+    navigator.geolocation.getCurrentPosition((position)=> {
+      setLocation({
+        lat: position.coords.latitude,
+        lon: position.coords.longitude
+      });
+    })
+  }
+    async function asyncGetWeather() {
+    let encodedLocation = `lat=${location.lat}&lon=${location.lon}`;
+    const response = await openWeatherAPI.get(`&${encodedLocation}`);
+    setWeather(response.data);
   }
 
-  useEffect(()=> {
-    navigator.geolocation.getCurrentPosition((position)=> {
-      getWeather(position.coords.latitude, position.coords.longitude);
-      setLocation(true)
-    })
-  }, [])
+  function handleRefreshButton() {
+    setWeather(false);
+    getLocation();
+  }
 
   if (location === false) {
     return (
-      <div>
-        Por favor, habilite a localização no browser.
-      </div>
+      <Warning />
     )
   } else if (weather === false) {
     return (
-      <div>
-        Carregando o clima em sua localidade
-      </div>
+      <Loading />
     )
   } else {
     return (
       <div>
-        <h3>Clima em sua localidade ({weather['weather'][0]['description']})</h3>
-        <hr/>
-        <ul>
-          <li>Temperatura atual: {weather['main']['temp']}°</li>
-          <li>Temperatura máxima: {weather['main']['temp_max']}°</li>
-          <li>Temperatura minima: {weather['main']['temp_min']}°</li>
-          <li>Pressão: {weather['main']['pressure']} hpa</li>
-          <li>Humidade: {weather['main']['humidity']}%</li>
-        </ul>
+      <Main weather={weather} />
+      <button onClick={handleRefreshButton}>Atualizar</button>
       </div>
     );
   }

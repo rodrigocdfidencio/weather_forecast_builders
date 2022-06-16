@@ -6,7 +6,7 @@ export default function Main(props) {
     return (
         <div>
         <div className='index'>
-            <div className='container'>
+            <div className='weather-container'>
                 <div className="top">
                     <div className="location">
                         <p>{weather['name']}, {weather['sys']['country']}</p>

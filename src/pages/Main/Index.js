@@ -51,7 +51,7 @@ function Main() {
   } else {
     return (
       <div className='app'>
-      <div className="container">
+      <div className="main-container">
       <Weather weather={weather} />
       <button className='updateBtn' onClick={handleRefreshButton}>Atualizar</button>
       </div>

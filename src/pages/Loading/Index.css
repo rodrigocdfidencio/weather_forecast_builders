@@ -1,4 +1,4 @@
-.loading{
+.loading {
     font-size: 3rem;
     font-weight: bold;
 }
@@ -13,4 +13,4 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    }
+}

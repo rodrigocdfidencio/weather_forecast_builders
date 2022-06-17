@@ -1,26 +1,39 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Weather from '../Weather/Index'
 import Warning from '../Warning/Index';
 import Loading from '../Loading/Index';
+import Button from '../../component/Button';
 import openWeatherAPI from '../../services/api';
 import './Index.css';
 
-function Main() {
+const Main = () => {
   const [location, setLocation] = useState(false);
   const [weather, setWeather] = useState(false);
+  const [lastUpdate, setLastUpdate] = useState('');
 
   useEffect(() => {
     getLocation();
   }, []);
 
   useEffect(() => {
+    const lastUpdate = () => {
+      setLastUpdate(new Date().toLocaleTimeString());
+    }
+
+    async function asyncGetWeather() {
+      let encodedLocation = `lat=${location.lat}&lon=${location.lon}`;
+      const response = await openWeatherAPI.get(`&${encodedLocation}`);
+      setWeather(response.data);
+    }
+
     if (location) {
       asyncGetWeather();
+      lastUpdate();
     }
   }, [location]);
 
   const getLocation = () => {
-    navigator.geolocation.getCurrentPosition((position)=> {
+    navigator.geolocation.getCurrentPosition((position) => {
       setLocation({
         lat: position.coords.latitude,
         lon: position.coords.longitude
@@ -28,17 +41,10 @@ function Main() {
     })
   }
 
-  async function asyncGetWeather() {
-    let params = 'lang=pt_br&units=metric';
-    let encodedLocation = `lat=${location.lat}&lon=${location.lon}&=${params}`;
-    const response = await openWeatherAPI.get(`&${encodedLocation}`);
-    setWeather(response.data);
-  }
-
-  function handleRefreshButton() {
+  const handleRefreshButton = () => {
     setWeather(false);
     getLocation();
-  }
+  };
 
   if (location === false) {
     return (
@@ -50,11 +56,9 @@ function Main() {
     )
   } else {
     return (
-      <div className='app'>
       <div className="main-container">
-      <Weather weather={weather} />
-      <button className='updateBtn' onClick={handleRefreshButton}>Atualizar</button>
-      </div>
+        <Weather weather={weather} lastUpdate={lastUpdate} />
+        <Button handleRefreshButton={handleRefreshButton} />
       </div>
     );
   }

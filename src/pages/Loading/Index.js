@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
 import './Index.css';
 
-export default function Loading() {
+const Loading = () => {
     return (
-        <div className='app'>
-        <div className="loading-container">
-        <div className='loading'>Carregando o clima em sua localidade...</div>
+        <div className='loading-container'>
+            <div className='loading'>Carregando o clima em sua localidade...</div>
         </div>
-        </div>
-    )
+    );
 }
+
+export default Loading;

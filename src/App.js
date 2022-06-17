@@ -1,9 +1,12 @@
 import React from 'react';
 import Main from './pages/Main/Index';
 
-function App() {
+const App = () => {
   return(
-    <Main />
+    <div className="app">
+      <Main />
+    </div>
   )
 }
+
 export default App;

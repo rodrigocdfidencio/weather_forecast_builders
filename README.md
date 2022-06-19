@@ -12,11 +12,11 @@
 ### Aplicação web desenvolvida como desafio técnico no processo seletivo para Web Developer na empresa Builders.
 
 <a  id="sobre"></a>
-### Desafio
+## Desafio
 Desenvolva um aplicativo que consuma a localização atual do usuário e exiba na interface o endereço atual os dados climáticos da região e um botão para atualizar os dados. - Para fazer essa busca, pode-se usar a [API do Open Weather](https://openweathermap.org/api) Map.
 
 <a  id="telas"></a>
-### Telas
+## Telas
 ## Versão Mobile
 <img  src="https://github.com/rodrigocdfidencio/weather_forecast_builders/blob/developer/src/assets/Screen_mobile.png"  alt="Screen_mobile"/>
 

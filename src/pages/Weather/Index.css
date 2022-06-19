@@ -1,0 +1,65 @@
+h1 {
+    font-size: 5rem;
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+.temp {
+    width: auto;
+    font-size: 0%;
+}
+
+.top {
+    width: 100%;
+    margin: 1rem auto;
+}
+
+.description {
+    position: relative;
+    margin: 5% 0 10%;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 100%;
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.info {
+    padding: 8px;
+}
+
+.last-update {
+    margin-top: 5%;
+}
+
+@media screen and (max-width: 415px) {
+    .bottom {
+        flex-direction: column;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 240px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+}

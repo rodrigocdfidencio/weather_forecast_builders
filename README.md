@@ -1,70 +1,64 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Weather Forecast App - Platform Builders
 
-## Available Scripts
+<!--ts-->
+ * [Sobre](#sobre) 
+ * [Telas](#telas) 
+ * [Instalação](#instalacao) 
+ * [Como usar](#como-usar) 
+ * [Testes](#testes) 
+ * [Desenvolvimento e Tecnologias](#tecnologias) 
+  <!--te-->
 
-In the project directory, you can run:
+  
 
-### `npm start`
+### Aplicação web desenvolvida como desafio técnico no processo seletivo para Web Developer na empresa Builders.
+<a id="sobre"></a>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Desafio
 
-### `npm test`
+Desenvolva um aplicativo que consuma a localização atual do usuário e exiba na interface o endereço atual os dados climáticos da região e um botão para atualizar os dados. - Para fazer essa busca, pode-se usar a [API do Open Weather](https://openweathermap.org/api) Map.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  
 
-### `npm run build`
+### Telas
+<a id="telas"></a>
+  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img  src="weather_forecast_builders/src/assets/Screen_mobile.png"  alt="Screen_mobile"/>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img  src="weather_forecast_builders/src/assets/Screen_web.png"  alt="Screen_web"/>
 
-### `npm run eject`
+##  Instruções de instalação.
+<a id="instalacao"></a>
+- Faça o download utilizando **`git clone git@github.com:rodrigocdfidencio/weather_forecast_builders.git`** 
+- Acesse a pasta da aplicação com o comando  **`cd weather_forecast_builders`** 
+- Execute o comando **`npm install`** para instalar as dependências do projeto.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Como rodar o projeto
+- Para rodar a aplicação, utilize  **`npm start`** 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Testes
+<a id="testes"></a>
+- Para rodar os testes, utilize **`npm test`** 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Utilização
+<a id="como-usar"></a>
+- A aplicação utiliza a localização do usuário e define os parâmetros de latitude e longitude para realizar a consulta na API do Open Weather Map
+- A localização do usuário é setada através da propriedade **`Navigator.geolocation`**  que retorna um objeto [`Geolocation`](https://developer.mozilla.org/pt-BR/docs/Web/API/Geolocation) que disponibiliza acesso de conteúdo Web à localização do dispositivo.
+- Após a definição da localização do usuário, a consulta na API do Open Weather Map é realizada e retorna com os dados de cidade do usuário, clima, temperatura, sensação térmica, umidade do ar e velocidade do vento.
+- Na tela é exibido também o horário da última consulta realizada.
+- Para realizar uma nova consulta, o usuário deve clicar no botão atualizar.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Sobre o desenvolvimento e tecnologias utilizadas.
+<a id="tecnologias"></a>
+- Para desenvolver a aplicação, foi utilizada a linguagem Javascript, através do framework React.js.
+- Os testes foram escritos utilizando o Jest e React testing library. 
+- Aplicação desenvolvida utilizando modo responsivo
+- Deploy realizado no firebase, disponível no endereço:
+- https://weather-forecast-builders.web.app/
+- Por se tratar de desafio técnico, o arquivo .ENV está disponível junto do código, para facilitar a utilização.

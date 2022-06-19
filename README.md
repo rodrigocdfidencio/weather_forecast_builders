@@ -21,7 +21,7 @@ Desenvolva um aplicativo que consuma a localização atual do usuário e exiba n
 <img  src="https://github.com/rodrigocdfidencio/weather_forecast_builders/blob/developer/src/assets/Screen_mobile.png"  alt="Screen_mobile"/>
 
 ## Versão Web
-<img  src="https://github.com/rodrigocdfidencio/weather_forecast_builders/blob/developer/src/assets/Screen_web.png"  alt="Screen_web"/>
+<img  src="https://github.com/rodrigocdfidencio/weather_forecast_builders/blob/developer/src/assets/Screen_mobile.png"  alt="Screen_web"/>
 
   
 
@@ -84,3 +84,17 @@ Desenvolva um aplicativo que consuma a localização atual do usuário e exiba n
 - https://weather-forecast-builders.web.app/
 
 - Por se tratar de desafio técnico, o arquivo .ENV está disponível junto do código, para facilitar a utilização, em uso profissional, o arquivo estaria listado no .gitignore.
+
+### Autor
+---
+
+<a href="https://github.com/rodrigocdfidencio">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/60055837?s=120&v=4" width="100px;" alt=""/>
+ <br />
+ <sub><b>Rodrigo Fidencio</b></sub></a> 
+
+
+Feito por Rodrigo Fidencio 👋🏽 Entre em contato!
+
+[![Linkedin Badge](https://img.shields.io/badge/-Rodrigo-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/rodrigocdfidencio/)](https://www.linkedin.com/in/rodrigocdfidencio/) 
+[![Gmail Badge](https://img.shields.io/badge/-rodrigo.fidencio@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:rodrigo.fidencio@gmail.com)](mailto:rodrigo.fidencio@gmail.com)

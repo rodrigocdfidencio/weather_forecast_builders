@@ -26,7 +26,7 @@ Desenvolva um aplicativo que consuma a localização atual do usuário e exiba n
 ### Telas
 <img  src="https://github.com/rodrigocdfidencio/weather_forecast_builders/blob/developer/src/assets/Screen_mobile.png"  alt="Screen_mobile"/>
 
-<img  src="https://github.com/rodrigocdfidencio/weather_forecast_builders/blob/developer/src/assets/Screen_mobile.png"  alt="Screen_web"/>
+<img  src="https://github.com/rodrigocdfidencio/weather_forecast_builders/blob/developer/src/assets/Screen_web.png"  alt="Screen_web"/>
 
 <a id="instalacao"></a>
 ##  Instruções de instalação.

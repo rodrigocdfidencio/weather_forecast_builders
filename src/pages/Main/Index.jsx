@@ -26,7 +26,7 @@ function Main() {
 
   useEffect(() => {
     const updateDateTime = () => {
-      setLastUpdate(new Date().toLocaleTimeString());
+      setLastUpdate(new Date().toLocaleTimeString('pt-BR'));
     };
 
     async function asyncGetWeather() {
